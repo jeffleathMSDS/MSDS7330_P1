@@ -107,3 +107,14 @@ wordcloud(words = names(w),
           colors = brewer.pal(8, 'Dark2'),
           scale = c(2, 0.3),
           rot.per = 0.7)
+
+
+
+# Search Twitter, Donald Trump Tweets
+dt = searchTwitter('from:realDonaldTrump', # Key Term to search
+                   n = 1e5 , #Max number of records to retrieve
+                   geocode = NULL,
+                   since = '2019-01-01',
+                   retryOnRateLimit = 1e3
+)
+dttweets = twListToDF(dt)
